@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 //in laravel we have 2 method for routing;
 //1
-/*Route::get('/home', function () {
+Route::get('/home', function () {
     return view('home');
-});*/
+});
 
 //bund if only show view so we can only use this method but if use controler also dont use
 //Route::view('/home','home');
@@ -35,4 +35,4 @@ Route::get('/name/{name}', function ($name) {
     
 });
 //for redirect in laravle routing we can use 
-route::redirect('home','/');
+//route::redirect('home','/');
