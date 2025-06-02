@@ -18,8 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//here we create route to use controler
-//also use pass value dynimacally
-Route::get('user/{name}',[FirstController::class,'userDetails']);
-//pass value dynamically into ciontroler for passing value and show in view
-Route::get('show/{name}/{pass}',[FirstController::class,'showDetails']);
+/*call view using route
+Route::get('user', function () {
+    return view('showUser');
+});*/
+
+/*here we show view using controler using call firstcontroler class fucntion name showView 
+Route::get('user',[FirstController::class,'showView']);*/
+
+//now we use same controler function and view but this time show data in view dynamically
+Route::get('user/{name}/{mobile}/{city}',[FirstController::class,'showView']);
+
+//call new function to show view and check view exit method
+Route::get('check',[FirstController::class,'viewCheck']);
+

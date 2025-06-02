@@ -3,21 +3,40 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\View;
 
 //create first controler class
 class FirstController extends BaseController
 {
-    //first function in controlerr and use this in web.app routes to show
-    //get data with routes
-   function userDetails($name){
-    echo "user name is $name";
-    echo "<br>";
-    echo "user password is 123";
-   }
+    
+    
 
-   function showDetails($name,$pass){
+    //here we show view with dynacally data
+   function showView($name,$mobile,$city)
+    {
+        //here we check view exit or not
+        if(View::exists('showUser')){
+            return view('showUser',['name'=>$name,'mobile'=>$mobile,'city'=>$city]);
+        }else{
+            echo "No view found";
+        }
+        
+    }
+    function viewCheck(){
+       /*here we check view exit or not
+        if(View::exists('viewChecks')){
+            return view('viewChecks');
+        }else{
+            echo "No view found";
+        }*/  
 
-    return view('userDetails',['name'=>$name,'pass'=>$pass]);
+        //here we check view exit or not
+        if(View::exists('viewCheck')){
+            return view('viewCheck');
+        }else{
+            echo "No view found";
+        }
+    }
 
-   }
+   
 }
