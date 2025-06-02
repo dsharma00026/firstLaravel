@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+//load controler
+use App\Http\Controllers\FirstController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,22 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//in laravel we have 2 method for routing;
-//1
-Route::get('/home', function () {
-    return view('home');
-});
-
-//bund if only show view so we can only use this method but if use controler also dont use
-//Route::view('/home','home');
-
-
-
-//if we use any page with predefined any data or give data with url wo we use this mehod
-//url like localhost/8000/name/deepak
-Route::get('/name/{name}', function ($name) {
-    return view('name',['name'=>$name]);
-    
-});
-//for redirect in laravle routing we can use 
-//route::redirect('home','/');
+//here we create route to use controler
+//also use pass value dynimacally
+Route::get('user/{name}',[FirstController::class,'userDetails']);
+//pass value dynamically into ciontroler for passing value and show in view
+Route::get('show/{name}/{pass}',[FirstController::class,'showDetails']);
