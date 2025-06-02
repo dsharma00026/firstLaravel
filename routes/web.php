@@ -27,7 +27,7 @@ Route::get('user', function () {
 Route::get('user',[FirstController::class,'showView']);*/
 
 //now we use same controler function and view but this time show data in view dynamically
-Route::get('user/{name}/{mobile}/{city}',[FirstController::class,'showView']);
+Route::get('user',[FirstController::class,'showView']);
 
 //call new function to show view and check view exit method
 Route::get('check',[FirstController::class,'viewCheck']);

@@ -11,16 +11,14 @@ class FirstController extends BaseController
     
     
 
+
     //here we show view with dynacally data
-   function showView($name,$mobile,$city)
-    {
-        //here we check view exit or not
-        if(View::exists('showUser')){
-            return view('showUser',['name'=>$name,'mobile'=>$mobile,'city'=>$city]);
-        }else{
-            echo "No view found";
-        }
-        
+   function showView(){
+    //here we learn about blade so first we show variable in view
+    $name="deepak_sharma"; 
+    $names=["deepak","peter","sam","john"];
+
+    return view('showUser',['name'=>$name,'names'=>$names]);       
     }
     function viewCheck(){
        /*here we check view exit or not
