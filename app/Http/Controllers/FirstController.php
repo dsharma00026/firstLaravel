@@ -20,21 +20,7 @@ class FirstController extends BaseController
 
     return view('showUser',['name'=>$name,'names'=>$names]);       
     }
-    function viewCheck(){
-       /*here we check view exit or not
-        if(View::exists('viewChecks')){
-            return view('viewChecks');
-        }else{
-            echo "No view found";
-        }*/  
-
-        //here we check view exit or not
-        if(View::exists('viewCheck')){
-            return view('viewCheck');
-        }else{
-            echo "No view found";
-        }
-    }
+   
 
 
 }
