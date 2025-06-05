@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 //load controler
 use App\Http\Controllers\FirstController;
+use App\Http\Controllers\RagisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,11 @@ Route::get('user',[FirstController::class,'showView']);*/
 
 //now we use same controler function and view but this time show data in view dynamically
 Route::get('user',[FirstController::class,'showView']);
-
 //call new function to show view and check view exit method
 Route::get('check',[FirstController::class,'viewCheck']);
 
+//make route for  ragister view to show 
+Route::view('ragister','ragister');
+
+//make route for ragister controller 
+Route::post('adduser',[RagisterController::class,'AddUser']);
