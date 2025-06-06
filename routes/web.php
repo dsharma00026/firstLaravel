@@ -37,3 +37,6 @@ Route::view('ragister','ragister');
 
 //make route for ragister controller 
 Route::post('adduser',[RagisterController::class,'AddUser']);
+
+//here make route for url generation view
+Route::view('url','url_generation');

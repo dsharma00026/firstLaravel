@@ -12,6 +12,10 @@ lear about component in laravel
 <x-toast msg="user login successfully" class="success"/>
 <br/>
 
+
+<a href="/ragister">Ragister User</a><br>
+<a href="{{URL::to('url')}}">URL Page</a><br>
+
 <x-toast msg="user login failed" class="failed"/>
 
 

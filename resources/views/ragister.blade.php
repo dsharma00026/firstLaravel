@@ -1,5 +1,6 @@
 <div>
     <h1>Ragister user</h1>
+    <a href="/url">Url</a>
     <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
 
    <!-- to show error
