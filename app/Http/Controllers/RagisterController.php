@@ -25,13 +25,23 @@ class RagisterController extends Controller
          //here we learn about form validation
 
          $request->validate([
-           'user_name'=>'required',
+           'user_name'=>'required | min:3 | max:15',
            'user_email'=>'required | email',
            'user_mobile'=>'required', 
            'user_password'=>'required', 
            'user_gender'=>'required', 
            'user_age'=>'required', 
            'user_state'=>'required' 
+         ],[
+          'user_name.required'=>'user field required',
+          'user_name.min'=>'user field must 3 character',
+          'user_name.max'=>'user field max 15 character',
+          'user_mobile.required'=>'user mobile field required',
+          'user_email.required'=>'user email field required',
+          'user_name.email'=>'user email field must be valid'
+
+
+
          ]);
          return $request;
     }

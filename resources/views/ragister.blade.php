@@ -14,27 +14,30 @@
     <form action="adduser" method="post">
         @csrf <!-- for laravel sequirty is must to mention -->
 <div>
-    <input type="text" name="user_name" placeholder="Enter your name">
+    <input type="text" name="user_name" placeholder="Enter your name" value="{{old('user_name')}}"
+    class="{{($errors->first('user_name')?'input-error':'')}}" >
     <span style="color: red;">@error('user_name'){{$message}}@enderror</span> 
     <br> 
 </div>
-<div >
-    <input type="text" name="user_email" placeholder="enter your email">
+
+<div>
+    <input type="text" name="user_email" placeholder="enter your email" value="{{old('user_email')}}">
     <span style="color: red;">@error('user_email'){{$message}}@enderror</span> 
 <br>
 </div>
+
 <div >
-    <input type="text" name="user_mobile" placeholder="Enter your Number"> 
+    <input type="text" name="user_mobile" placeholder="Enter your Number" value="{{old('user_mobile')}}"> 
         <span style="color: red;">@error('user_mobile'){{$message}}@enderror</span> 
 <br>
 </div>
 <div >
-    <input type="text" name="user_password" placeholder="Enter your passwrord">
+    <input type="text" name="user_password" placeholder="Enter your passwrord" value="{{old('user_password')}}">
         <span style="color: red;">@error('user_password'){{$message}}@enderror</span> 
 
 </div>
 <div>
-    <input type="text" name="user_age" placeholder="Enter your Age">
+    <input type="text" name="user_age" placeholder="Enter your Age" value="{{old('user_age')}}">
         <span style="color: red;">@error('user_age'){{$message}}@enderror</span> 
 
 </div>
@@ -93,6 +96,16 @@
 
 
 
+
+<style>
+.input-error{
+    border: red 1px solid;
+    color: red;
+
+}
+
+
+</style>
 
 
 
