@@ -13,7 +13,7 @@ lear about component in laravel
 <br/>
 
 
-<a href="/ragister?country=india">Ragister User</a><br>
+<a href="/ragister?country=india&age=20">Ragister User</a><br>
 <a href="{{URL::to('url')}}">URL Page</a><br>
 <a href="/middle?age=15">Middle Ware</a><br>
 
