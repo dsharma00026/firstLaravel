@@ -10,7 +10,7 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
-
+//use App\Http\Middleware\AgeCheck;
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
@@ -41,6 +41,10 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+/*$app->withMiddleware(function(Middleware $middleware){
+
+    $middleware.append(AgeCheck::class);
+});*/
 /*
 |--------------------------------------------------------------------------
 | Return The Application
@@ -51,5 +55,7 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
+
+
 
 return $app;

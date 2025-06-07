@@ -13,8 +13,9 @@ lear about component in laravel
 <br/>
 
 
-<a href="/ragister">Ragister User</a><br>
+<a href="/ragister?country=india">Ragister User</a><br>
 <a href="{{URL::to('url')}}">URL Page</a><br>
+<a href="/middle?age=15">Middle Ware</a><br>
 
 <x-toast msg="user login failed" class="failed"/>
 

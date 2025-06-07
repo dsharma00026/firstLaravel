@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 //load controler
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\RagisterController;
+use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\CheckCountry;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,11 +34,14 @@ Route::get('user',[FirstController::class,'showView']);
 //call new function to show view and check view exit method
 Route::get('check',[FirstController::class,'viewCheck']);
 
-//make route for  ragister view to show 
-Route::view('ragister','ragister');
+//make route for  ragister view to show and also apply middle
+Route::view('ragister','ragister')->middleware(CheckCountry::class);
 
 //make route for ragister controller 
 Route::post('adduser',[RagisterController::class,'AddUser']);
 
 //here make route for url generation view
 Route::view('url','url_generation');
+
+//here make route for middle ware view
+Route::view('middle','middleWare')->middleware(AgeCheck::class);

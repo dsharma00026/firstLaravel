@@ -25,7 +25,7 @@ class RagisterController extends Controller
          //here we learn about form validation
 
          $request->validate([
-           'user_name'=>'required | min:3 | max:15',
+           'user_name'=>'required | min:3 | max:15 | new Upper',
            'user_email'=>'required | email',
            'user_mobile'=>'required', 
            'user_password'=>'required', 
