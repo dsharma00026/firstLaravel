@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 //load controler
-use App\Http\Controllers\FirstController;
+use App\Http\Controllers\DBController;
 use App\Http\Controllers\RagisterController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CheckCountry;
@@ -29,10 +29,10 @@ Route::get('user', function () {
 /*here we show view using controler using call firstcontroler class fucntion name showView 
 Route::get('user',[FirstController::class,'showView']);*/
 
-//now we use same controler function and view but this time show data in view dynamically
-Route::get('user',[FirstController::class,'showView']);
+//now we use same controler function and view but this time show data from database
+Route::get('getData',[DBController::class,'showView']);
 //call new function to show view and check view exit method
-Route::get('check',[FirstController::class,'viewCheck']);
+Route::get('showData',[DBController::class,'viewCheck']);
 
 //make route for  ragister view to show and also apply middle
 Route::view('ragister','ragister')->middleware([CheckCountry::class,AgeCheck::class]);

@@ -7,7 +7,9 @@ use PhpParser\Node\Stmt\Return_;
 
 class RagisterController extends Controller
 {
-    //here we handle our ragister view form and data
+
+   
+        //here we handle our ragister view form and data
     function AddUser(Request $request){
 
         //when we this function called from form so we get data in Request method mention top
@@ -25,7 +27,7 @@ class RagisterController extends Controller
          //here we learn about form validation
 
          $request->validate([
-           'user_name'=>'required | min:3 | max:15 | new Upper',
+           'user_name'=>'required | min:3 | max:15',
            'user_email'=>'required | email',
            'user_mobile'=>'required', 
            'user_password'=>'required', 
@@ -39,10 +41,13 @@ class RagisterController extends Controller
           'user_mobile.required'=>'user mobile field required',
           'user_email.required'=>'user email field required',
           'user_name.email'=>'user email field must be valid'
-
-
-
          ]);
-         return $request;
+
+       
+         //return $request;
     }
+
+
+
+  
 }
