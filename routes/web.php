@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 //load controler
 use App\Http\Controllers\DBController;
 use App\Http\Controllers\RagisterController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CheckCountry;
+use Spatie\FlareClient\Api;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +51,6 @@ Route::view('middle','middleWare')->middleware(AgeCheck::class);
 
 //here we create route for use model to fetch data and show into view
 Route::get('model',[DBController::class,'getData']);
+
+//here we create route for use api to fetch data using api
+Route::get('ApiData',[ApiController::class,'fetchData']);
