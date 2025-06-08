@@ -32,7 +32,7 @@ Route::get('user',[FirstController::class,'showView']);*/
 //now we use same controler function and view but this time show data from database
 Route::get('getData',[DBController::class,'showView']);
 //call new function to show view and check view exit method
-Route::get('showData',[DBController::class,'viewCheck']);
+//Route::get('showData',[DBController::class,'viewCheck']);
 
 //make route for  ragister view to show and also apply middle
 Route::view('ragister','ragister')->middleware([CheckCountry::class,AgeCheck::class]);
@@ -45,3 +45,6 @@ Route::view('url','url_generation');
 
 //here make route for middle ware view
 Route::view('middle','middleWare')->middleware(AgeCheck::class);
+
+//here we create route for use model to fetch data and show into view
+Route::get('model',[DBController::class,'getData']);
