@@ -44,7 +44,7 @@ class RagisterController extends Controller
          ]);
 
        
-         return $request;
+         return view('formUser',['UserData'=>$request]);
     }
 
 

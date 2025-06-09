@@ -13,7 +13,7 @@ class ApiController extends Controller
     function fetchData(){
 
 
-        $response=Http::get('https://jsonplaceholder.typicode.com/users');//use this pass api url and get data from api and store in variable 
+        $response=Http::get('https://jsonplaceholder.typicode.com/users'); //use this pass api url and get data from api and store in variable 
        $response=$response->body();//here weget only body of api and remove unnessary data
         return view('apiView',['ApiData'=>json_decode($response)]);
     }

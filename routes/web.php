@@ -54,3 +54,5 @@ Route::get('model',[DBController::class,'getData']);
 
 //here we create route for use api to fetch data using api
 Route::get('ApiData',[ApiController::class,'fetchData']);
+
+
