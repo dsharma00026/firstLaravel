@@ -50,5 +50,21 @@ class RagisterController extends Controller
 
 
 
+    //crete to learn about session
+   function login(Request $request){
+
+    //here we create and init session for use in profile page
+    $request->session()->put('user_name',$request->user_name);
+    $request->session()->put('user_password',$request->user_password);
+
+      return redirect('profile');
+    }
+
+    //here we delete session
+
+    function logout(){
+      session()->put('user_name');
+     return redirect('login');
+    }
   
 }

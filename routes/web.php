@@ -55,4 +55,9 @@ Route::get('model',[DBController::class,'getData']);
 //here we create route for use api to fetch data using api
 Route::get('ApiData',[ApiController::class,'fetchData']);
 
+//create route form login page and controller to learn session
+Route::view('login','login');//form page
+Route::post('login',[RagisterController::class,'login']);//function where data store in session
+Route::view('profile','profile');//view where show user data from session
+Route::get('logout',[RagisterController::class,'logout']);//logout function
 
