@@ -44,6 +44,7 @@ class RagisterController extends Controller
          ]);
 
        
+         //now we get all tha data from form and show userdata into view 
          return view('formUser',['UserData'=>$request]);
     }
 

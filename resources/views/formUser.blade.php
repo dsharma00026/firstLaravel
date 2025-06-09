@@ -10,6 +10,11 @@
         <Td>age</Td>
         <td>gender</td>
         <td>state</td>
+        <td>method</td>
+        <td>get path</td>
+        <td>url</td>
+        <td>IP Address</td>
+        <td>skills</td>
     </tr>
     <tr>
     <td>{{$UserData->user_name}}</td>
@@ -19,11 +24,17 @@
     <td>{{$UserData->user_age}}</td>
     <td>{{$UserData->user_gender}}</td>
     <td>{{$UserData->user_state}}</td>
+     <td>{{$UserData->method()}}</td>
+     <td>{{$UserData->path()}}</td>
+     <td>{{$UserData->url()}}</td>
+    <td>{{$UserData->ip()}}</td>
+
+
     @foreach($UserData->user_skill as $skill)
       <td>{{$skill}}</td>
     @endforeach
-    <td>{{$UserData->method}}</td>
-  
+   
+
     </tr>
 
 
