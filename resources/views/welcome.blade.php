@@ -4,6 +4,10 @@
  <!-- and learn also how to pass data view to subview dymancially -->
 
 @include('common.header',['hname'=>"DRS agency"]);
+<h5>Select languaneg</h5>
+<a href="/">English</a>
+<a href="/">hindi</a>
+<a href="/">koran</a>
 
 <h1>
 Hello laravel
@@ -13,10 +17,10 @@ lear about component in laravel
 <br/>
 
 
-<a href="/ragister">Ragister User</a><br>
-<a href="{{URL::to('url')}}">URL Page</a><br>
-<a href="/middle?age=15">Middle Ware</a><br>
-<a href="/login">Login Page</a>
+<a href="/ragister">{{__('welcome.Ragister')}}</a><br>
+<a href="{{URL::to('url')}}">{{__('welcome.Url')}}</a><br>
+<a href="/middle?age=15">Middle</a><br>
+<a href="/login">{{__('welcome.Login')}}</a>
 
 <x-toast msg="user login failed" class="failed"/>
 

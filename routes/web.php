@@ -7,6 +7,7 @@ use App\Http\Controllers\DBController;
 use App\Http\Controllers\RagisterController;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CheckCountry;
+use Illuminate\Support\Facades\App;
 use Spatie\FlareClient\Api;
 
 /*
@@ -23,6 +24,12 @@ use Spatie\FlareClient\Api;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*create rout for spefic language
+Route::get('setlang/{lang}',function($lang){
+    App::setlocale($lang);
+    return redirect('/');
+});*/
 
 /*call view using route
 Route::get('user', function () {
