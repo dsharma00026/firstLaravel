@@ -33,12 +33,10 @@
     @foreach($UserData->user_skill as $skill)
       <td>{{$skill}}</td>
     @endforeach
-   
-
     </tr>
-
-
     </table>
+
+    <img style="width: 150px;" src="{{url('storage/'.$path)}}" >
 
 
 </div>

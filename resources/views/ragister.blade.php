@@ -15,7 +15,7 @@
     @endforeach
     @endif
 -->
-    <form action="adduser" method="post">
+    <form action="adduser" method="post" enctype="multipart/form-data">
         @csrf <!-- for laravel sequirty is must to mention -->
 <div>
     <input type="text" name="user_name" placeholder="Enter your name" value="{{old('user_name')}}"
@@ -91,7 +91,10 @@
 </div>
 
 
-    
+
+<div>
+    <input type="file" name="file"><br><br>
+</div>
 
 
 <div>
@@ -99,6 +102,14 @@
 </div>
     </form>
 </div>
+
+
+
+
+
+
+
+
 
 
 

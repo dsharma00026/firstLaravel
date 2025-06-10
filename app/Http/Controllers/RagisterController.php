@@ -44,12 +44,27 @@ class RagisterController extends Controller
          ]);
 
        
+         /*get image or file path and here filename laravel generated automaticlly
+         //here we store path of image into our public folder so we have 2 way 1path generate by laravel
+         //2nd is we declare path name by own
+         $path=$request->file('file')->store('public');//this is 1method
+         $path=explode("/",$path);//here we remove public name from path and 
+        // also our path make now array*/
+
+        $filename=$request->user_name.'.jpg';//this is 2nd method
+         $path=$request->file('file')->storeAs('public',$filename);
+
          //now we get all tha data from form and show userdata into view 
-         //return view('formUser',['UserData'=>$request]);
+         return view('formUser',['UserData'=>$request,'path'=>$filename]);
 
 
+
+
+         /*here we learn about flsh session to save data into server like session 
+           but this data only save until uou reload or refresh not page when you refresh the page
+         data will remove
          $request->session()->flash('message','user added succesfully');
-         return redirect('ragister');
+         return redirect('ragister');*/
 
     }
 
