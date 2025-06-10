@@ -38,7 +38,7 @@ Route::get('getData',[DBController::class,'showView']);
 //Route::get('showData',[DBController::class,'viewCheck']);
 
 //make route for  ragister view to show and also apply middle
-Route::view('ragister','ragister')->middleware([CheckCountry::class,AgeCheck::class]);
+Route::view('ragister','ragister');
 
 //make route for ragister controller 
 Route::post('adduser',[RagisterController::class,'AddUser']);

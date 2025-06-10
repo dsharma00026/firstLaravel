@@ -45,7 +45,12 @@ class RagisterController extends Controller
 
        
          //now we get all tha data from form and show userdata into view 
-         return view('formUser',['UserData'=>$request]);
+         //return view('formUser',['UserData'=>$request]);
+
+
+         $request->session()->flash('message','user added succesfully');
+         return redirect('ragister');
+
     }
 
 
@@ -53,11 +58,11 @@ class RagisterController extends Controller
     //crete to learn about session
    function login(Request $request){
 
-    //here we create and init session for use in profile page
-    $request->session()->put('user_name',$request->user_name);
-    $request->session()->put('user_password',$request->user_password);
+     //here we create and init session for use in profile page
+     $request->session()->put('user_name',$request->user_name);
+     $request->session()->put('user_password',$request->user_password);
 
-      return redirect('profile');
+     return redirect('profile');
     }
 
     //here we delete session
@@ -66,5 +71,7 @@ class RagisterController extends Controller
       session()->put('user_name');
      return redirect('login');
     }
+
+    
   
 }

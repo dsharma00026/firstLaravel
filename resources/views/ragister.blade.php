@@ -1,6 +1,9 @@
 <div>
     <h1>Ragister user</h1>
     <a href="/url">Url</a>
+    @if(session('message'))
+    <span class="msg">{{session('message')}}</span>
+    @endif
     <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
 
    <!-- to show error
@@ -52,6 +55,8 @@
     <span style="color: red;">@error('user_gender'){{$message}}@enderror</span> 
 
 </div><br>
+
+
 
 
 
@@ -130,3 +135,13 @@
 
 </style>
 -->
+<style>
+    .msg{
+        background-color: lightgreen;
+        border-radius: 2px;
+        padding: 2px 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+        
+    }
+</style>
