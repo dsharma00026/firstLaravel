@@ -30,7 +30,7 @@ class DBController extends BaseController
     //learn basic crud opreation using db class
 
 
-    $userData=DB::table('users')->get();
+    $userData=DB::table('users')->paginate(3);
      /*both  way to fetch data using select and db class bult function
      $userData=DB::select('select * from users where age=24');
      $userData=DB::table('users')->where('age','24')->get();*/

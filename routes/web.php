@@ -9,6 +9,7 @@ use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CheckCountry;
 use Illuminate\Support\Facades\App;
 use Spatie\FlareClient\Api;
+use App\Http\Controllers\Emp_Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,3 +69,8 @@ Route::post('login',[RagisterController::class,'login']);//function where data s
 Route::view('profile','profile');//view where show user data from session
 Route::get('logout',[RagisterController::class,'logout']);//logout function
 
+
+
+//here we create full login and ragister page using databse
+Route::view('emp_ragister','emp_ragister');
+Route::post('emp_ragister',[Emp_Controller::class,'AddEmp']);

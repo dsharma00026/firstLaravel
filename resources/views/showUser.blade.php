@@ -19,6 +19,15 @@
 
     @endforeach
     </table>
+    {{$UserData->links()}}
 
 
 </div>
+
+<style>
+ .w-5.h-5{
+    width: 20px;
+ }
+
+
+</style>
