@@ -10,6 +10,7 @@ use App\Http\Middleware\CheckCountry;
 use Illuminate\Support\Facades\App;
 use Spatie\FlareClient\Api;
 use App\Http\Controllers\Emp_Controller;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,3 +75,7 @@ Route::get('logout',[RagisterController::class,'logout']);//logout function
 //here we create full login and ragister page using databse
 Route::view('emp_ragister','emp_ragister');
 Route::post('emp_ragister',[Emp_Controller::class,'AddEmp']);
+
+
+//make Route fir mail
+Route::get('mail',[MailController::class,'sendMail']);
