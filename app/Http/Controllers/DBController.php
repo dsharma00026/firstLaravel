@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
-use App\Models\users;
+use App\Models\Student;
 
 //create first controler class
 class DBController extends BaseController
@@ -30,7 +30,7 @@ class DBController extends BaseController
     //learn basic crud opreation using db class
 
 
-    $userData=DB::table('users')->paginate(3);
+    $userData=DB::table('students')->paginate(3);
      /*both  way to fetch data using select and db class bult function
      $userData=DB::select('select * from users where age=24');
      $userData=DB::table('users')->where('age','24')->get();*/
@@ -78,15 +78,15 @@ class DBController extends BaseController
         $user=users::get();  //assign and fetch data from database using model
         now we get data from database and store in $user variable */
 
-        $user=users::all();
-      
+        $user=Student::paginate(3);
+     
 
         //now here we learn about basic crud opreation in laravel using model
         /*fetchData form databse using model
         $user=users::all()->where('name','sharma');*/
 
-        /*insert Data in databse using model
-        $user=users::insert([
+       /* insert Data in databse using model
+        $user=Student::insert([
         'name'=>'Sam singh',
         'email'=>'dhfh@yahoo.com',
         'password'=>'dhdf',
